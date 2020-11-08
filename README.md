@@ -1,0 +1,1 @@
+Programa hecho para calcular las cordenadas cartesianas de los vertices de las divisiones en media circunferencia.
