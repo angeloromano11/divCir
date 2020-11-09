@@ -77,14 +77,17 @@ resultado.onclick = () =>{
     var e2 = ''
     for(let i =0; i < anglearray.length; i++){
         //var f = document.getElementById("breakLine")
-        e1 = `x:${xarray[i].toFixed(3)}`;
-        e2 = `y:${yarray[i].toFixed(3)}`;
+        e0 = `${i + 1} `
+        e1 = ` ${xarray[i].toFixed(3)} `;
+        e2 = ` ${yarray[i].toFixed(3)} `;
         console.log(e1, e2)
 
         var table = document.getElementById("myTable");
-        var row = table.insertRow(i);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
+        var row = table.insertRow(i + 1);
+        var cell0 = row.insertCell(0);
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        cell0.innerHTML = e0;
         cell1.innerHTML = e1;
         cell2.innerHTML = e2;
           
