@@ -29,7 +29,7 @@ resultado.onclick = () =>{
     var anglearray = [0];
     var angle2 = 0;
 
-    alert(`Radio = ${radious()} Divisiones = ${div()}`)
+    //alert(`Radio = ${radious()} Divisiones = ${div()}`)
     console.log(`Radio = ${radious()}`)
     console.log(`Divisiones = ${div()}`)
     console.log(`Xmax = ${xmax}`)
@@ -41,8 +41,10 @@ resultado.onclick = () =>{
         b = angle2 + angle;
         angle2 = b;
         anglearray.push(b)
+         
     };
     console.log(`angulos = ${anglearray}`);
+    document.getElementById("angulos").innerText = `Angulos = ${anglearray}`;
 
     if(radious() == "" || div() == ""){
         alert('Completa los datos bro..');
@@ -71,11 +73,21 @@ resultado.onclick = () =>{
     }
 
     //Crear las coordenadas
-    var e = ''
+    var e1 = ''
+    var e2 = ''
     for(let i =0; i < anglearray.length; i++){
-        e = `Cord${i} = x:${xarray[i].toFixed(3)} , y:${yarray[i].toFixed(3)}`;
-        console.log(e)
-        document.getElementById("coordenadas").append(e);
+        //var f = document.getElementById("breakLine")
+        e1 = `x:${xarray[i].toFixed(3)}`;
+        e2 = `y:${yarray[i].toFixed(3)}`;
+        console.log(e1, e2)
+
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = e1;
+        cell2.innerHTML = e2;
+          
     }
 }
 }
